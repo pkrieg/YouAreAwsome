@@ -31,22 +31,25 @@ struct ContentView: View {
         Spacer()
         
         Button("Press Me!") {
-
+            
             let message1 = "You are Awsome!" // Constant: zentral änderbar !
             let message2 = "You are Great!"
             let imageString1 = "sun.max.fill"
             let imageString2 = "hand.thumbsup"
             
-            if imageName == "" {
-                imageName = imageString2
-                message = message2
-            } else if imageName == imageString1{
-                imageName = imageString2
-                message = message2
-            } else if imageName == imageString2{
-                imageName = imageString1
-                message = message1
-            }
+            //            if imageName == "" {
+            //                imageName = imageString2
+            //                message = message2
+            //            } else if imageName == imageString1{
+            //                imageName = imageString2
+            //                message = message2
+            //            } else if imageName == imageString2{
+            //                imageName = imageString1
+            //                message = message1
+            //            }
+            
+            message = ( message == message1 ? message2 : message1 )
+            imageName = ( imageName == imageString1 ? imageString2 : imageString1 )
         }
         .buttonStyle(.borderedProminent)
         .font(.title2)
